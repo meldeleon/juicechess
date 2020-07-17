@@ -1,0 +1,11 @@
+<script>
+    function initializeChessBoard() {
+        const squares = Array(8).fill(null).map(() =>
+            Array(8).fill(null))
+
+        squares[7][4] = "your mom";
+        console.table(squares)
+
+    };
+    initializeChessBoard();
+</script>

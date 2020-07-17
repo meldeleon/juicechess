@@ -9,43 +9,11 @@ export default class King extends Piece {
         : "https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_kdt45.svg"
     );
   }
-  
-  isMovePossible(src, dest) {
-    // if 1-7 do nothign
-    // if if multiple of 8, do not allow move + 1,  do not allow -9 move, do not allow + 9 move
-    if (src % 8 === 0 ){
-        return(
-            src - 8 === dest ||
-            src - 7 === dest ||
-            src + 8 === dest ||
-            src + 7 === dest ||
-            src - 1 === dest
-        );
-  
-    }
-    else if (src - 1 % 8 === 0){
-        return(
-            
-        );
-    }
-    
-    /*return (
-      src - 9 === dest ||
-      src - 8 === dest ||
-      src - 7 === dest ||
-      src + 1 === dest ||
-      src + 9 === dest ||
-      src + 8 === dest ||
-      src + 7 === dest ||
-      src - 1 === dest
-    );*/
 
+  isMovePossible(src, dest) {
+    return Math.abs(src[0] - dest[0]) <= 1 && Math.abs(src[1] - dest[1]) <= 1;
   }
   getSrcToDestPath(src, dest) {
     return [];
   }
 }
-
-
-
-
